@@ -1,13 +1,12 @@
-import app from "./src/07_app.js";
+import app from "./src/app.js";
 import cluster from "node:cluster";
 import { cpus } from "node:os";
 import http from "node:http";
 import { Server as WebSocketServer } from "socket.io";
 import process from "node:process";
-import { logger } from "./src/12_utils/index.js";
-import sockets from "./src/08_sockets.js";
-import messagesService from "./src/01_business/messagesService.js";
-if (process.env.PERSISTENCE_SYSTEM === "mongo") import("./src/13_config/db.js");
+import { logger } from "./src/utils/index.js";
+import messagesService from "./src/business/messagesService.js";
+if (process.env.PERSISTENCE_SYSTEM === "mongo") import("./src/config/db.js");
 
 const server = http.createServer(app);
 const io = new WebSocketServer(server);
@@ -20,7 +19,6 @@ const enableExpress = () => {
     );
     io.on("connection", async function (socket) {
       logger.info(`${socket.id} connected.`);
-
       io.emit("messages", await messagesService.getMessages());
     });
   });

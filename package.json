@@ -5,7 +5,7 @@
   "main": "./server.js",
   "type": "module",
   "scripts": {
-    "test": "mocha ./src/13?test/products.test.js",
+    "test": "mocha ./src/test/products.test.js",
     "dev": "nodemon -r dotenv/config server.js",
     "start": "node -r dotenv/config server.js"
   },
@@ -21,7 +21,6 @@
     "dotenv": "16.0.3",
     "ejs": "3.1.8",
     "express": "4.18.1",
-    "express-graphql": "^0.12.0",
     "firebase-admin": "^11.3.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "6.7.0",
