@@ -1,5 +1,6 @@
 import UsersService from "../business/usersService.js";
-import { client, logger, sendMailTo } from "../utils/index.js";
+// import { client, logger, sendMailTo } from "../utils/index.js";
+import { logger, sendMailTo } from "../utils/index.js";
 
 const renderLoginView = async (req, res) => {
   try {
