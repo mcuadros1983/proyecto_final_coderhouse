@@ -83,16 +83,16 @@ const createUser = async (req, res) => {
           message: "User already exists",
         });
       } else {
-        await sendMailTo(
-          process.env.NODEMAILER_USER,
-          "Nuevo registro de usuario",
-          "Se ha registrado un nuevo usuario."
-        );
-        client.messages.create({
-          body: "Se ha registrado un nuevo usuario.",
-          from: process.env.TWILIO_PHONE,
-          to: process.env.ADMIN_PHONE,
-        });
+        // await sendMailTo(
+        //   process.env.NODEMAILER_USER,
+        //   "Nuevo registro de usuario",
+        //   "Se ha registrado un nuevo usuario."
+        // );
+        // client.messages.create({
+        //   body: "Se ha registrado un nuevo usuario.",
+        //   from: process.env.TWILIO_PHONE,
+        //   to: process.env.ADMIN_PHONE,
+        // });
 
         res.status(302);
         logger.http(`${req.method} ${req.originalUrl} ${res.statusCode}`);

@@ -104,11 +104,11 @@ const createOrder = async (req, res) => {
           state,
           req.cookies.cartIdCookie
         );
-        sendMailTo(
-          newOrder.buyer_email,
-          "Compraste en Store",
-          `Tu compra se ha realizado correctamente. Tu número de order es ${newOrder.id}`
-        );
+        // sendMailTo(
+        //   newOrder.buyer_email,
+        //   "Compraste en Store",
+        //   `Tu compra se ha realizado correctamente. Tu número de order es ${newOrder.id}`
+        // );
         res.status(200);
         logger.http(`${req.method} ${req.originalUrl} ${res.statusCode}`);
         res.render("./pages/single-order.ejs", {
