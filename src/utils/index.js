@@ -1,8 +1,7 @@
 import sendMailTo from "./nodemailer.js";
-// import client from "./twilio.js";
+import client from "./twilio.js";
 import {logger} from "./logger.js";
 import generatePurchaseDate from "./generatePurchaseDate.js";
 import getHourAndMinutes from "./getHourAndMinutes.js";
 
-export { sendMailTo,  logger, generatePurchaseDate, getHourAndMinutes };
-// export { sendMailTo, client, logger, generatePurchaseDate, getHourAndMinutes };
+export { sendMailTo, client, logger, generatePurchaseDate, getHourAndMinutes };

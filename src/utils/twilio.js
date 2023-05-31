@@ -1,5 +1,5 @@
-// import twilio from "twilio";
+import twilio from "twilio";
 
-// const client = twilio(process.env.ACCOUNT_SID, process.env.AUTH_TOKEN);
+const client = twilio(process.env.ACCOUNT_SID, process.env.AUTH_TOKEN);
 
-// export default client;
+export default client;

@@ -1,4 +1,4 @@
-import { createTransport } from "nodemailer";
+import { createTransport } from "nodemailer"; 
 
 const transporter = createTransport({
   host: "smtp.ethereal.email",
@@ -10,6 +10,7 @@ const transporter = createTransport({
 });
 
 const sendMailTo = async (to, subject, text) => {
+  console.log("datos", to, subject, text, process.env.NODEMAILER_FROM, process.env.NODEMAILER_USER, process.env.NODEMAILER_PASS)
   const mailOptions = {
     from: process.env.NODEMAILER_FROM || "Store",
     to,
